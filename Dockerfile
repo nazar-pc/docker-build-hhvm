@@ -1,4 +1,4 @@
-FROM ubuntu:15.10
+FROM ubuntu:16.04
 
 RUN \
 
@@ -14,6 +14,9 @@ RUN \
 	libevent-dev libmagickwand-dev libinotifytools0-dev libiconv-hook-dev libedit-dev \
 	libiberty-dev libxslt1-dev ocaml-native-compilers libsqlite3-dev libyaml-dev libgmp3-dev \
 	gperf libkrb5-dev libnotify-dev && \
+
+	# Hack until HHVM will be able to find it properly
+	ln -s /usr/lib/x86_64-linux-gnu/libtbb.so.2 /usr/lib/libtbb.so && \
 
 	rm -rf /var/lib/apt/lists/* && \
 
