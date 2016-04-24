@@ -3,7 +3,6 @@ FROM ubuntu:15.10
 RUN \
 
 	apt-get update && \
-	apt-get upgrade -y && \
 
 	apt-get install -y autoconf automake binutils-dev build-essential cmake g++ gawk git \
 	libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-regex-dev \
